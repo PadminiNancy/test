@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 26, 2015 6:01:25 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.padmini.book.model.StatusInfo" table="Status" schema="KgfznXZcet">
+        <id name="status_id" type="int">
+            <column name="status_id" length="10" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="user" class="com.padmini.book.model.UserInfo" fetch="select">
+            <column name="name" length="10" />
+        </many-to-one>
+        <many-to-one name="bookInfo" class="com.padmini.book.model.BookInfo" fetch="select">
+            <column name="book_id" length="10" />
+        </many-to-one>
+        <property name="status" type="string">
+            <column name="status" length="30" />
+        </property>
+        
+    </class>
+</hibernate-mapping>
